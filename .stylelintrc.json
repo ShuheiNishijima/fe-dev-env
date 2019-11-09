@@ -1,0 +1,14 @@
+{
+  "plugins": ["stylelint-scss"],
+  "rules": {
+    "max-empty-lines": 2,
+    "declaration-colon-space-after": "always",
+    "block-opening-brace-space-before": "always",
+    "block-closing-brace-newline-after": "always",
+    "selector-pseudo-element-colon-notation": "double",
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-trailing-semicolon": "always",
+    "indentation": 2,
+    "no-eol-whitespace": true
+  }
+}
