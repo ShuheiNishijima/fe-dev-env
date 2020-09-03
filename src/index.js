@@ -1,4 +1,4 @@
-import './assets/style/scss/style.scss';
+import './assets/styles/style.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
 });

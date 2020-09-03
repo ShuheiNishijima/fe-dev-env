@@ -1,41 +1,50 @@
-const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const path = require('path')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 module.exports = {
   entry:  './src/index.js',
   output: {
-    filename: 'main.bundle.js',
-    path: path.resolve(__dirname, 'js/dist')
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public'),
   },
   devServer: {
     open: true,
-    openPage: "index.html",
+    contentBase: path.resolve(__dirname, "src"),
     watchContentBase: true,
-    port: 3000,
+    port: 3001,
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        }
+        use: [
+          { loader: 'babel-loader' },
+        ],
       },
       {
         test: /\.scss$/,
         use: [
-          {loader: MiniCssExtractPlugin.loader,},
-          {loader: 'css-loader',},
-          {loader: 'postcss-loader',},
-          {loader: 'sass-loader',}
-        ]
-      }
-    ]
+          { loader: MiniCssExtractPlugin.loader },
+          { loader: "css-loader" },
+          { loader: 'postcss-loader' },
+          { loader: 'sass-loader' },
+        ],
+      },
+      {
+        test: /\.html$/,
+        use: [
+          { loader: "html-loader" },
+        ],
+      },
+    ],
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '../../assets/style/css/style.css',
-    })
-  ]
+    new MiniCssExtractPlugin(
+      { filename: './assets/styles/style.css' }
+    ),
+    new HtmlWebpackPlugin(
+      { template: "./src/index.html" }
+    )
+  ],
 };
