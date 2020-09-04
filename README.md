@@ -1,4 +1,4 @@
-# fe-dev
+# fe-dev-env
 
 > VanillaJS development env
 
