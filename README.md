@@ -1,6 +1,6 @@
 # fe-dev
 
-> A Vue.js project
+> VanillaJS development env
 
 ## Build Setup
 
