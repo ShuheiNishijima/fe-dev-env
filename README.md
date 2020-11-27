@@ -5,6 +5,13 @@
 ## Build Setup
 
 ``` bash
+# node.js version
+v14.15.1
+```
+
+## Build Setup
+
+``` bash
 # install dependencies
 npm install
 
