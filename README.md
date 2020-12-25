@@ -6,7 +6,7 @@
 
 ``` bash
 # node.js version
-v14.15.1
+v14.15.3
 ```
 
 ## Build Setup
